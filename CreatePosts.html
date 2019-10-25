@@ -14,14 +14,20 @@ file name: CreatePosts.html
 	<!--<link href="style.css"
             rel="stylesheet"
             type="text/css"/>-->
+            <style>
+                    body {
+                    background-color:rgb(218, 203, 118);
+                }
+            </style>
     </head>
 <body>
 
-    <!-- <strong class="headerText">The Witch's Shop</strong><br><br> -->
-
-    <form action="CreateUser.php" method="post">
+    <strong style="font-size:30px;">Create a New Post</strong><br>
+    Note: You must have previously created a new username.<br><br>
+    <form action="CreatePosts.php" method="post">
        <div id="frontendtext">
-		<strong>Username:</strong> <input type="text" name="username" id="username">
+        <strong>Username:</strong> <input type="text" name="username" id="username"><br>
+        <strong id="postBox">Post:</strong> <input type="text" name="content" id="content" size="100">
 	</div>
         <div><input type="submit" name="submit" value="Enter"></div><br>
     </form>
