@@ -13,6 +13,7 @@ if ($mysqli->connect_errno) {
 
 $query1 = "SELECT user_id FROM Users";
 
+
 echo "<table>";
 echo "<th>Users</th>";
 if ($result = $mysqli->query($query1)) {
