@@ -13,15 +13,14 @@ if ($mysqli->connect_errno) {
 
 $query1 = "SELECT user_id FROM Users";
 
-
-echo "<table>";
-echo "<th>Users</th>";
+echo "<table border='2'>";
+echo "<th style=\"border: 4px solid green\">Users</th>";
 if ($result = $mysqli->query($query1)) {
     /* fetch associative array; while fetch_assoc is not null: keeps bringing stuff in */
     while ($row = $result->fetch_assoc()) {
         echo "<tr>";//begin new table row
         //echo "Row variable: ".$row["user_id"]."<br>"; 
-        echo "<td style=\"text-align: center; border: 1px solid black\">".$row["user_id"]."</td>";
+        echo "<td style=\"text-align: center; border: 2px solid pink\">".$row["user_id"]."</td>";
         echo "</tr>";//end that row
     }
 

@@ -1,0 +1,65 @@
+EECS448 Lab5 Ex7
+10/23/19
+
+file name: DeletePost.html
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>DeletePosts</title>
+
+	<!--<link href="style.css"
+            rel="stylesheet"
+            type="text/css"/>-->
+            <style>
+                    body {
+                    background-color:rgb(128, 158, 138);
+                }
+            </style>
+    </head>
+<body>
+	<strong style="font-size:30px;">Delete Posts</strong><br><br>
+	<form action="DeletePost.php" method="post">
+
+	<?php
+            $mysqli = new mysqli("mysql.eecs.ku.edu", "anissakhan", "eo9eVey9", "anissakhan");
+
+            if ($mysqli->connect_errno) {
+                    printf("Connect failed: %s\n", $mysqli->connect_error);
+                    exit();
+            }
+
+	    $query1 = "SELECT * FROM Posts";
+            $postCounter = 1;
+	    //echo "".$postCounter."";
+
+	    echo "<table border = '2'>";
+            echo "<tr>";
+            echo "<th>User</th>";
+            echo "<th>Post</th>";
+            echo "<th>Delete?</th>";
+
+		 if ($result = $mysqli->query($query1)) {
+               		 while ($row = $result->fetch_assoc()) {
+                   		echo "<tr>";
+                    		echo "<td>".$row["author_id"]."</td>";
+                    		echo "<td>".$row["content"]."</td>";
+				echo "<td style=\"text-align: center\"><input name=\"post".$postCounter."\" type=\"checkbox\"></td>";
+				$postCounter++;
+                    		echo "</tr>";
+                }
+    
+                $result->free();
+            }
+
+
+	    echo "</table>";
+	    $mysqli->close();
+	?>
+
+		<div><input type="submit" name="submit" value="Enter"></div><br>
+    	
+	</form>
+</body>
+</html>
