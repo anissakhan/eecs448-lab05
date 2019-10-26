@@ -1,0 +1,58 @@
+Anissa Khan
+EECS448 Lab5 Ex6
+10/23/19
+
+file name: ViewUserPosts.html
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>ViewPosts</title>
+
+	<!--<link href="style.css"
+            rel="stylesheet"
+            type="text/css"/>-->
+            <style>
+                    body {
+                    background-color:rgb(218, 158, 118);
+                }
+            </style>
+    </head>
+<body>
+
+    <strong style="font-size:30px;">View User Posts</strong><br>
+    Instructions: Select a user from the drop down list.<br><br>
+    <form action="ViewUserPosts.php" method="post">
+
+       <?php
+            
+            
+        $mysqli = new mysqli("mysql.eecs.ku.edu", "anissakhan", "eo9eVey9", "anissakhan");
+
+        if ($mysqli->connect_errno) {
+                printf("Connect failed: %s\n", $mysqli->connect_error);
+                exit();
+        }
+
+        $query1 = "SELECT user_id FROM Users";
+
+        echo "<select name=\"userid\">";
+        if ($result = $mysqli->query($query1)) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<option>".$row["user_id"]."</option>";
+            }
+
+            $result->free();
+        }	
+
+        echo "</select>";
+
+        $mysqli->close();
+	
+     ?>
+
+        <div><input type="submit" name="submit" value="Enter"></div><br>
+    </form>
+
+</body>
