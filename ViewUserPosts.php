@@ -8,7 +8,7 @@ if ($mysqli->connect_errno) {
 }
 
 if(isset($_POST['submit'])){
-        $selected_val = $_POST["userid"];  // Storing Selected Value In Variable
+	$selected_val = $_POST["userid"];  // Storing Selected Value In Variable
 }
 
 echo "Posts from user: ".$selected_val."<br><br>";
@@ -21,10 +21,10 @@ $postCounter = 1;
 if ($result = $mysqli->query($query1)) {
     /* fetch associative array; while fetch_assoc is not null: keeps bringing stuff in */
     while ($row = $result->fetch_assoc()) {
-           // if($row["author_id"]==$selected_val){
-                    echo "Post ".$postCounter.": ".$row["content"]."<br>";
-                    $postCounter++;
-           // }     
+	   // if($row["author_id"]==$selected_val){
+		    echo "Post ".$postCounter.": ".$row["content"]."<br>";
+		    $postCounter++;
+	   // }	    
     }
 
     /* free result set */
@@ -33,10 +33,10 @@ if ($result = $mysqli->query($query1)) {
 
 if($postCounter==1)
 {
-        echo "This user has no posts.<br>";
+	echo "This user has no posts.<br>";
 }
 
 /* close connection */
 $mysqli->close();
-
+echo "<br><a href=\"AdminHome.html\">Return to Admin Home</a><br>";
 ?>

@@ -31,5 +31,5 @@ echo "</table>";
 
 /* close connection */
 $mysqli->close();
-
+echo "<br><a href=\"AdminHome.html\">Return to Admin Home</a><br>";
 ?>

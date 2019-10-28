@@ -16,12 +16,12 @@ $query2 = "DELETE FROM Posts WHERE post_id='".$toDelete."'";
 if ($result = $mysqli->query($query1)) {
     while ($row = $result->fetch_assoc()) { 
         $postCounter++;
-        $toDelete=$row[post_id];
-        $query2 = "DELETE FROM Posts WHERE post_id='".$toDelete."'";
+	    $toDelete=$row[post_id];
+	    $query2 = "DELETE FROM Posts WHERE post_id='".$toDelete."'";
         if(isset($_POST["post".$postCounter.""]))
-        {
-                $mysqli->query($query2);
-                echo "Post with post ID of '".$toDelete."' has been deleted.<br>";
+	    {
+		    $mysqli->query($query2);
+		    echo "Post with post ID of '".$toDelete."' has been deleted.<br>";
         }
     }
 
@@ -30,5 +30,5 @@ if ($result = $mysqli->query($query1)) {
 
 /* close connection */
 $mysqli->close();
-
+echo "<br><a href=\"AdminHome.html\">Return to Admin Home</a><br>";
 ?>

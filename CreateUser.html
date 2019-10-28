@@ -9,21 +9,24 @@ file name: CreateUser.html
 <!DOCTYPE html>
 <html>
     <head>
-        <title>CreateUser</title>
-
-        <!--<link href="style.css"
-            rel="stylesheet"
-            type="text/css"/>-->
+	<title>CreateUser</title>
+            <style>
+                    body {
+                    background-color:rgb(138, 172, 194);
+                }
+            </style>
     </head>
 <body>
 
 
     <form action="CreateUser.php" method="post">
        <div id="frontendtext">
-                <strong>Create New Username:</strong> <input type="text" name="username" id="username">
-        </div>
-        <div><input type="submit" name="submit" value="Enter"></div><br>
+	        <strong style="font-size:30px;">Create a New User</strong><br><br>
+		<strong>Create New Username:</strong> <input type="text" name="username" id="username">
+	</div>
+	<div><input type="submit" name="submit" value="Enter"></div><br>
     </form>
     <a href="CreatePosts.html">Create a Post</a><br>
+    <a href="AdminHome.html">Return to Admin Home</a><br>
 </body>
-</html>
+</html> 

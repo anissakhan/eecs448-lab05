@@ -13,8 +13,8 @@ $query2 = "SELECT user_id FROM Users";
 
 if($userName=="")
  {
-         echo "You must enter a Username.";
-         exit();
+	 echo "You must enter a Username.";
+	 exit();
  }
 //do query1
 //$mysqli->query($query1);
@@ -22,12 +22,12 @@ if($userName=="")
 if ($result = $mysqli->query($query2)) {
     /* fetch associative array; while fetch_assoc is not null: keeps bringing stuff in */
     while ($row = $result->fetch_assoc()) {
-        //echo "Row variable: ".$row["user_id"]."<br>";
-        if($row["user_id"]==$userName)
-        {
-                echo "Username ".$userName." already exists.<br>";
-                exit();
-        }
+	//echo "Row variable: ".$row["user_id"]."<br>";
+	if($row["user_id"]==$userName)
+	{
+		echo "Username ".$userName." already exists.<br>";
+		exit();
+	}
     }
     
     //do query1
@@ -48,5 +48,5 @@ if ($result = $mysqli->query($query2)) {
 
 /* close connection */
 $mysqli->close();
-
+echo "<br><a href=\"AdminHome.html\">Return to Admin Home</a><br>";
 ?>
