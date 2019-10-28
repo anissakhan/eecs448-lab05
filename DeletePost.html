@@ -31,8 +31,8 @@ file name: DeletePost.html
                     exit();
             }
 
-	    $query1 = "SELECT * FROM Posts";
-            $postCounter = 1;
+	    $query1 = "SELECT * FROM Posts ORDER BY post_id";
+        $postCounter = 1;
 	    //echo "".$postCounter."";
 
 	    echo "<table border = '2'>";
@@ -46,9 +46,9 @@ file name: DeletePost.html
                    		echo "<tr>";
                     		echo "<td>".$row["author_id"]."</td>";
                     		echo "<td>".$row["content"]."</td>";
-				echo "<td style=\"text-align: center\"><input name=\"post".$postCounter."\" type=\"checkbox\"></td>";
-				$postCounter++;
-                    		echo "</tr>";
+				            echo "<td style=\"text-align: center\"><input name=\"post".$postCounter."\" type=\"checkbox\"></td>";
+				            $postCounter++;
+                            echo "</tr>";
                 }
     
                 $result->free();

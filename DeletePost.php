@@ -7,7 +7,7 @@ if ($mysqli->connect_errno) {
     exit();
 }
 
-$query1 = "SELECT post_id FROM Posts";
+$query1 = "SELECT post_id FROM Posts ORDER BY post_id";
 $postCounter = 0;
 
 $toDelete = 1;
